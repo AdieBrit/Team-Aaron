@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Our Fundraiser</title>
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --background: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --warning: #fff7ed;
+      --warning-border: #fed7aa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ecfeff, var(--background));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      background: var(--card);
+      border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), #14b8a6);
+      color: #ffffff;
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .content {
+      padding: 30px 28px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .notice {
+      background: var(--warning);
+      border: 1px solid var(--warning-border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: bold;
+      padding: 16px 22px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+    }
+
+    .button:active {
+      transform: scale(0.99);
+    }
+
+    .small-text {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 18px 28px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: #f8fafc;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 12px;
+      }
+
+      .hero, .content, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Support [Child's Name]</h1>
+      <p>Please help us ask the Minister for Health for urgent support.</p>
+    </section>
+
+    <section class="content">
+      <p class="intro">
+        We are holding this fundraiser to support <strong>[Child's Name]</strong> and their family during a very difficult time. We are asking everyone attending to take one minute to send a respectful email to the Minister for Health, asking for support and attention for this case.
+      </p>
+
+      <div class="notice">
+        <strong>How it works:</strong> Enter your name below and tap the button. Your own email app will open with a message already prepared. You can review it before sending.
+      </div>
+
+      <form id="supportForm">
+        <label for="fullName">Your name</label>
+        <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required />
+
+        <label for="county">County / area <span style="font-weight: normal; color: #64748b;">(optional)</span></label>
+        <input id="county" name="county" type="text" placeholder="e.g. Donegal" />
+
+        <label for="personalMessage">Add a short personal message <span style="font-weight: normal; color: #64748b;">(optional)</span></label>
+        <textarea id="personalMessage" name="personalMessage" placeholder="You can add your own short message here if you wish."></textarea>
+
+        <button class="button" type="submit">Open Email to Minister</button>
+      </form>
+
+      <p class="small-text">
+        This page does not collect or store your details. The email will open on your own device and you decide whether to send it.
+      </p>
+    </section>
+
+    <footer class="footer">
+      Thank you for your support.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('supportForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // EDIT THESE DETAILS BEFORE UPLOADING
+      const ministerEmail = 'minister_health@health.gov.ie';
+      const childName = '[Child\'s Name]';
+      const fundraiserName = '[Fundraiser Name / Event Name]';
+
+      const name = document.getElementById('fullName').value.trim();
+      const county = document.getElementById('county').value.trim();
+      const personalMessage = document.getElementById('personalMessage').value.trim();
+
+      if (!name) {
+        alert('Please enter your name before continuing.');
+        return;
+      }
+
+      const subject = `Support requested for ${childName}`;
+
+      let body = `Dear Minister,\n\n`;
+      body += `I am attending/supporting ${fundraiserName}, which has been organised in support of ${childName} and their family.\n\n`;
+      body += `I am respectfully asking you, as Minister for Health, to give this case your urgent attention and to do whatever is possible to ensure that ${childName} and their family receive the support, care and assistance they need.\n\n`;
+
+      if (personalMessage) {
+        body += `My own message:\n${personalMessage}\n\n`;
+      }
+
+      body += `Kind regards,\n${name}`;
+
+      if (county) {
+        body += `\n${county}`;
+      }
+
+      const mailtoLink = `mailto:${encodeURIComponent(ministerEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>
