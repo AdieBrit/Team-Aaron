@@ -166,12 +166,6 @@
       <label for="name">Your Name</label>
       <input type="text" id="name" required placeholder="Enter your name">
 
-      <label for="county">County / Area (Optional)</label>
-      <input type="text" id="county" placeholder="e.g. Donegal">
-
-      <label for="message">Optional Personal Message</label>
-      <textarea id="message" placeholder="Add your own short message here if you wish..."></textarea>
-
       <button type="submit">
         Open Email to Minister
       </button>
@@ -196,8 +190,6 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   const ministerEmail = "jennifer.carrollmacneill@oireachtas.ie";
 
   const name = document.getElementById("name").value;
-  const county = document.getElementById("county").value;
-  const personalMessage = document.getElementById("message").value;
 
   const subject = "Urgent Access to Givinostat for Children Living with Duchenne Muscular Dystrophy";
 
@@ -219,22 +211,10 @@ I respectfully ask that every effort be made to urgently progress approval, fund
 
 Time is muscle.`;
 
-  if (personalMessage.trim() !== "") {
-    body += `
-
-My personal message:
-${personalMessage}`;
-  }
-
   body += `
 
 Kind regards,
 ${name}`;
-
-  if (county.trim() !== "") {
-    body += `
-${county}`;
-  }
 
   const mailtoLink =
     `mailto:${ministerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
