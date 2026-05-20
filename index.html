@@ -1,236 +1,249 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support Our Fundraiser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Aaron - Support Campaign</title>
+
   <style>
-    :root {
-      --primary: #0f766e;
-      --primary-dark: #115e59;
-      --background: #f8fafc;
-      --card: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --warning: #fff7ed;
-      --warning-border: #fed7aa;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
+      padding: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #ecfeff, var(--background));
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      background: #f4f7fb;
+      color: #222;
     }
 
     .container {
-      width: 100%;
-      max-width: 760px;
-      background: var(--card);
-      border-radius: 22px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .hero {
-      background: linear-gradient(135deg, var(--primary), #14b8a6);
-      color: #ffffff;
-      padding: 36px 28px;
+    .header {
+      background: linear-gradient(135deg, #002f6c, #00509d);
+      color: white;
+      padding: 50px 30px;
       text-align: center;
     }
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.1;
+    .header h1 {
+      margin: 0;
+      font-size: 3rem;
     }
 
-    .hero p {
-      margin: 0;
-      font-size: 1.1rem;
+    .header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
       opacity: 0.95;
     }
 
     .content {
-      padding: 30px 28px;
+      padding: 35px;
     }
 
-    .intro {
+    .content h2 {
+      color: #002f6c;
+      margin-top: 0;
+    }
+
+    .content p {
+      line-height: 1.7;
       font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
     }
 
-    .notice {
-      background: var(--warning);
-      border: 1px solid var(--warning-border);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-      line-height: 1.5;
+    .highlight {
+      background: #fff3cd;
+      border-left: 6px solid #ffc107;
+      padding: 18px;
+      margin: 25px 0;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    form {
+      margin-top: 30px;
     }
 
     label {
       display: block;
-      font-weight: bold;
       margin-bottom: 8px;
+      font-weight: bold;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
       font-size: 1rem;
-      margin-bottom: 18px;
-      font-family: inherit;
+      box-sizing: border-box;
     }
 
     textarea {
-      min-height: 150px;
+      min-height: 120px;
       resize: vertical;
     }
 
-    .button {
-      display: block;
+    button {
       width: 100%;
+      background: #00509d;
+      color: white;
       border: none;
-      background: var(--primary);
-      color: #ffffff;
+      padding: 18px;
+      border-radius: 12px;
       font-size: 1.15rem;
       font-weight: bold;
-      padding: 16px 22px;
-      border-radius: 14px;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.1s ease;
+      transition: 0.2s;
     }
 
-    .button:hover {
-      background: var(--primary-dark);
-    }
-
-    .button:active {
-      transform: scale(0.99);
-    }
-
-    .small-text {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-top: 16px;
-      text-align: center;
+    button:hover {
+      background: #003f7d;
     }
 
     .footer {
-      border-top: 1px solid var(--border);
-      padding: 18px 28px;
       text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      color: #666;
       font-size: 0.9rem;
-      color: var(--muted);
-      background: #f8fafc;
     }
 
-    @media (max-width: 520px) {
-      body {
-        padding: 12px;
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 2.2rem;
       }
 
-      .hero, .content, .footer {
-        padding-left: 20px;
-        padding-right: 20px;
+      .content {
+        padding: 25px;
       }
     }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <section class="hero">
-      <h1>Support Aaron Langan</h1>
-      <p>Please help us ask the Minister for Health for urgent support.</p>
-    </section>
 
-    <section class="content">
-      <p class="intro">
-        We are holding this fundraiser to support <strong>Aaron Langan</strong> and his family during a very difficult time. We are asking everyone attending to take one minute to send a respectful email to the Minister for Health, asking for support and attention for this case.
-      </p>
+<div class="container">
 
-      <div class="notice">
-        <strong>How it works:</strong> Enter your name below and tap the button. Your own email app will open with a message already prepared. You can review it before sending.
-      </div>
+  <div class="header">
+    <h1>TEAM AARON</h1>
+    <p>Help us fight for access to life-changing treatment for Aaron.</p>
+  </div>
 
-      <form id="supportForm">
-        <label for="fullName">Your name</label>
-        <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required />
+  <div class="content">
 
-        <label for="county">County / area <span style="font-weight: normal; color: #64748b;">(optional)</span></label>
-        <input id="county" name="county" type="text" placeholder="e.g. Donegal" />
+    <h2>Time is Muscle</h2>
 
-        <label for="personalMessage">Add a short personal message <span style="font-weight: normal; color: #64748b;">(optional)</span></label>
-        <textarea id="personalMessage" name="personalMessage" placeholder="You can add your own short message here if you wish."></textarea>
+    <p>
+      Aaron Langan is a 9-year-old boy from Laghey, Co. Donegal living with Duchenne Muscular Dystrophy (DMD), a rare and terminal genetic condition that causes progressive muscle loss throughout the body.
+    </p>
 
-        <button class="button" type="submit">Open Email to Minister</button>
-      </form>
+    <p>
+      The drug <strong>Givinostat</strong> has already been approved by the European Medicines Agency (EMA), but children in Ireland are still waiting for access while reviews and negotiations continue.
+    </p>
 
-      <p class="small-text">
-        This page does not collect or store your details. The email will open on your own device and you decide whether to send it.
-      </p>
-    </section>
+    <div class="highlight">
+      Every delay means more irreversible muscle loss for children like Aaron.
+    </div>
 
-    <footer class="footer">
-      Thank you for your support.
-    </footer>
-  </main>
+    <p>
+      Families are not asking for a cure. They are asking for a chance to slow the progression of this cruel disease and improve quality of life.
+    </p>
 
-  <script>
-    document.getElementById('supportForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+    <p>
+      Please take 30 seconds to send a respectful email to the Minister for Health asking for urgent approval and funding of Givinostat for children living with DMD in Ireland.
+    </p>
 
-      // EDIT THESE DETAILS BEFORE UPLOADING
-      const ministerEmail = 'adrianbritton@hotmail.com';
-      const childName = 'Aaron Langan';
-      const fundraiserName = 'Team Aaron';
+    <form id="emailForm">
 
-      const name = document.getElementById('fullName').value.trim();
-      const county = document.getElementById('county').value.trim();
-      const personalMessage = document.getElementById('personalMessage').value.trim();
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required placeholder="Enter your name">
 
-      if (!name) {
-        alert('Please enter your name before continuing.');
-        return;
-      }
+      <label for="county">County / Area (Optional)</label>
+      <input type="text" id="county" placeholder="e.g. Donegal">
 
-      const subject = `Support requested for ${childName}`;
+      <label for="message">Optional Personal Message</label>
+      <textarea id="message" placeholder="Add your own short message here if you wish..."></textarea>
 
-      let body = `Dear Minister,\n\n`;
-      body += `I am attending/supporting ${fundraiserName}, which has been organised in support of ${childName} and his family.\n\n`;
-      body += `I am respectfully asking you, as Minister for Health, to give this case your urgent attention and to do whatever is possible to ensure that ${childName} and their family receive the support, care and assistance they need.\n\n`;
+      <button type="submit">
+        Open Email to Minister
+      </button>
 
-      if (personalMessage) {
-        body += `My own message:\n${personalMessage}\n\n`;
-      }
+    </form>
 
-      body += `Kind regards,\n${name}`;
+  </div>
 
-      if (county) {
-        body += `\n${county}`;
-      }
+  <div class="footer">
+    Thank you for supporting Team Aaron.
+  </div>
 
-      const mailtoLink = `mailto:${encodeURIComponent(ministerEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+</div>
 
-      window.location.href = mailtoLink;
-    });
-  </script>
+<script>
+
+document.getElementById("emailForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  // EDIT THIS EMAIL ADDRESS
+  const ministerEmail = "minister@health.gov.ie";
+
+  const name = document.getElementById("name").value;
+  const county = document.getElementById("county").value;
+  const personalMessage = document.getElementById("message").value;
+
+  const subject = "Urgent Access to Givinostat for Children Living with Duchenne Muscular Dystrophy";
+
+  let body = `Dear Minister,
+
+I am writing to ask for the urgent approval and funding of the drug Givinostat for children in Ireland living with Duchenne Muscular Dystrophy (DMD), including nine-year-old Aaron Langan from Laghey, Co. Donegal.
+
+Duchenne Muscular Dystrophy is a devastating and terminal condition that causes muscles throughout the body, including the heart and lungs, to progressively stop working. There is no cure. For children like Aaron, time is critical because once muscle strength is lost, it cannot be regained.
+
+Givinostat has already been approved by the European Medicines Agency (EMA), yet families in Ireland are still waiting for access while reviews and negotiations continue. During this delay, children are continuing to deteriorate.
+
+Aaron has already lost mobility in his lower body and now depends on a wheelchair full-time. His family fears that continued delays could result in him losing strength in his upper body as well, potentially leaving him no longer eligible for treatment.
+
+Families are not asking for a miracle cure. They are asking for the opportunity to slow the progression of this cruel disease and give children the best quality of life possible for as long as possible.
+
+Children with the same condition in Northern Ireland are already receiving this treatment. Families in the Republic of Ireland deserve the same opportunity and support.
+
+I respectfully ask that every effort be made to urgently progress approval, funding and access to Givinostat for children living with Duchenne Muscular Dystrophy before more irreversible muscle loss occurs.
+
+Time is muscle.`;
+
+  if (personalMessage.trim() !== "") {
+    body += `
+
+My personal message:
+${personalMessage}`;
+  }
+
+  body += `
+
+Kind regards,
+${name}`;
+
+  if (county.trim() !== "") {
+    body += `
+${county}`;
+  }
+
+  const mailtoLink =
+    `mailto:${ministerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
+
+});
+
+</script>
+
 </body>
 </html>
