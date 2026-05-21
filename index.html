@@ -224,7 +224,15 @@ ${name}`;
 
   const mailtoLink =
     `mailto:${ministerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
+  
+if (window.goatcounter) {
+  window.goatcounter.count({
+    path: 'send-email-click',
+    title: 'Send Email Clicked',
+    event: true
+  });
+}
+  
   window.location.href = mailtoLink;
 
 });
